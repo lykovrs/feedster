@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        link(href='https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700', rel='stylesheet', type='text/css')
+        link(href='css/main.css', rel='stylesheet')
+        script(src='js/vendor/angular.min.js')
+    body(ng-app='FeedsterApp')
+        .header
+            .container
+                .row
+                    .col-md-2
+                        h1 feedster
+        .posts(ng-controller='PostController')
+            .container
+                .post(ng-repeat='post in posts')
+                    feedster-post(info='post')
+                    plus-one
+        // Modules
+        script(src='js/app.js')
+        // Controllers
+        script(src='js/controllers/PostController.js')
+        // Directives
+        script(src='js/directives/feedsterPost.js')
+        script(src='js/directives/plusOne.js')
